@@ -20,9 +20,9 @@
  */
 typedef struct stack_s
 {
-	int n;
-	struct stack_s *prev;
-	struct stack_s *next;
+    int n;
+    struct stack_s *prev;
+    struct stack_s *next;
 } stack_t;
 
 /**
@@ -35,8 +35,30 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-	char *opcode;
-	void (*f)(stack_t **stack, unsigned int line_number);
+    char *opcode;
+    void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+/* stack.c */
+stack_t *push_front(stack_t **head, int n);
+stack_t *push_back(stack_t **head, const int n);
+int *pop_front(stack_t **head);
+void clear_stack(stack_t **head);
+
+/* helper.c */
+int checkNumber(char *str, int *num);
+int fileLinesToArray(char *filePath, char ***lines);
+int myerror(const int *error);
+
+/* memoryhelper.c */
+void freeargs(char ***arr);
+
+/* execute.c */
+void execute(stack_t **stack, char **arrayOfLines, int lineNumber);
+
+/* methods1.c */
+void push(stack_t **stack, unsigned int line_number);
+void pall(stack_t **stack, unsigned int line_number);
+void pint(stack_t **stack, unsigned int line_number);
 
 #endif
