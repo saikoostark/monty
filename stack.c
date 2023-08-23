@@ -78,6 +78,26 @@ void pop_front(stack_t **head)
 }
 
 /**
+ * back - function
+ * @head: function param
+ * @n: function param
+ * Return: int
+ */
+stack_t *back(stack_t **head)
+{
+
+	stack_t *temp = NULL;
+
+	temp = *head;
+	while (temp && temp->next)
+	{
+		temp = temp->next;
+	}
+
+	return (temp);
+}
+
+/**
  * clear_stack - function
  * @head: function param
  * Return: int

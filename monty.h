@@ -42,6 +42,7 @@ typedef struct instruction_s
 /* stack.c */
 stack_t *push_front(stack_t **head, int n);
 stack_t *push_back(stack_t **head, const int n);
+stack_t *back(stack_t **head);
 void pop_front(stack_t **head);
 void clear_stack(stack_t **head);
 
@@ -67,4 +68,8 @@ void swap(stack_t **stack, unsigned int line_number);
 /* methods2.c */
 void add(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
+
+/* methods4.c */
+void rotl(stack_t **stack, unsigned int line_number);
+void rotr(stack_t **stack, unsigned int line_number);
 #endif

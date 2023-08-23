@@ -54,7 +54,7 @@ int fileLinesToArray(char *filePath, char ***lines)
 	{
 		line[read - 1] = '\0';
 		_remove_whitespaces(&line);
-		printf("op: %s and len: %lu\n", line, strlen(line));
+		/* printf("op: %s and len: %lu\n", line, strlen(line));*/
 		(*lines)[i] = strdup(line);
 		free(line);
 		line = NULL;

@@ -26,11 +26,13 @@ void execute(stack_t **stack, char **arrayOfLines, int lineNumber)
 		{"mod", mod},
 		{"pchar", pchar},
 		{"pstr", pstr},
+		*/
 		{"rotl", rotl},
 		{"rotr", rotr},
+		/*
 		{"queue", queue},
 		{"stack", stack},
-		 */
+		*/
 		{NULL, NULL}};
 	int i = 0, flag = 1, error = 0;
 
