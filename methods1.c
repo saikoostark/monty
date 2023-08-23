@@ -19,7 +19,13 @@ void push(stack_t **stack, unsigned int line_number)
 
 		return;
 	}
-	push_front(stack, num);
+
+	if (push_front(stack, num) == NULL)
+	{
+		error = EXIT_FAILURE;
+		myerror(&error);
+		fprintf(stderr, "Error: malloc failed\n");
+	}
 }
 
 /**

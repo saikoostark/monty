@@ -10,10 +10,9 @@ void rotl(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp = *stack;
 	int a = 0;
+
 	if (temp == NULL)
-	{
 		return;
-	}
 
 	a = temp->n;
 
@@ -36,10 +35,9 @@ void rotr(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp = back(stack);
 	int a = 0;
+
 	if (temp == NULL)
-	{
 		return;
-	}
 
 	a = temp->n;
 	(void)line_number;

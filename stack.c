@@ -80,7 +80,6 @@ void pop_front(stack_t **head)
 /**
  * back - function
  * @head: function param
- * @n: function param
  * Return: int
  */
 stack_t *back(stack_t **head)
