@@ -14,14 +14,12 @@ void execute(stack_t **stack, char **arrayOfLines, int lineNumber)
 	instruction_t opst[] = {
 		{"push", push}, {"pall", pall}, {"pint", pint},
 		{"pop", pop}, {"swap", swap}, {"add", add}, {"nop", nop},
-		/*
 		{"sub", sub},
 		{"div", div},
 		{"mul", mul},
 		{"mod", mod},
 		{"pchar", pchar},
 		{"pstr", pstr},
-		*/
 		{"rotl", rotl},
 		{"rotr", rotr},
 		/*
