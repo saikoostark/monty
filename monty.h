@@ -51,6 +51,7 @@ int checkNumber(char *str, int *num);
 int fileLinesToArray(char *filePath, char ***lines);
 void _remove_whitespaces(char **str);
 int myerror(const int *error);
+char ***myArrayOfLine();
 
 /* memoryhelper.c */
 void freeargs(char ***arr);

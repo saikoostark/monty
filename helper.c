@@ -129,3 +129,9 @@ int myerror(const int *error)
 		storedError = *error;
 	return (storedError);
 }
+
+char ***myArrayOfLine()
+{
+	static char **arrayOfLine;
+	return (&arrayOfLine);
+}
