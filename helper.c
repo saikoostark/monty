@@ -10,6 +10,9 @@ int checkNumber(char *str, int *num)
 {
 	size_t i = 0;
 
+	if (str == NULL)
+		return (-1);
+
 	if (strlen(str) > 0 && str[0] == '-')
 		i++;
 
