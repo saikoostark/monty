@@ -16,8 +16,9 @@ void push(stack_t **stack, unsigned int line_number)
 		error = EXIT_FAILURE;
 		myerror(&error);
 		fprintf(stderr, "L%u: usage: push integer\n", line_number);
-
-		return;
+		clear_stack(stack);
+		freeargs(myArrayOfLine());
+		exit(EXIT_FAILURE);
 	}
 
 	if (push_front(stack, num) == NULL)
@@ -65,7 +66,9 @@ void pint(stack_t **stack, unsigned int line_number)
 		error = EXIT_FAILURE;
 		myerror(&error);
 		fprintf(stderr, "L%u: usage: can't pint, stack empty\n", line_number);
-		return;
+		clear_stack(stack);
+		freeargs(myArrayOfLine());
+		exit(EXIT_FAILURE);
 	}
 
 	printf("%d\n", temp->n);

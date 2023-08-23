@@ -10,7 +10,7 @@ int main(int argc, char const *argv[])
 {
 	int i = 0;
 	stack_t *head = NULL;
-	char **arrayOfLines = NULL;
+	char ***arrayOfLines = myArrayOfLine();
 	int error = 0;
 
 	if (argc != 2)
@@ -19,21 +19,21 @@ int main(int argc, char const *argv[])
 		return (EXIT_FAILURE);
 	}
 
-	if (fileLinesToArray((char *)argv[1], &arrayOfLines) == -1)
+	if (fileLinesToArray((char *)argv[1], arrayOfLines) == -1)
 	{
 		fprintf(stderr, "Error: Can't open file %s", argv[1]);
 		return (EXIT_FAILURE);
 	}
 
 	myerror(&error);
-	for (i = 0; arrayOfLines[i] != NULL; i++)
+	for (i = 0; (*arrayOfLines)[i] != NULL; i++)
 	{
-		execute(&head, arrayOfLines, i + 1);
+		execute(&head, *arrayOfLines, i + 1);
 		if (myerror(NULL) != 0)
 			break;
 	}
 
 	clear_stack(&head);
-	freeargs(&arrayOfLines);
+	freeargs(arrayOfLines);
 	return (myerror(NULL));
 }
