@@ -63,19 +63,18 @@ stack_t *push_back(stack_t **head, const int n)
  * @head: function param
  * Return: int
  */
-int *pop_front(stack_t **head)
+void pop_front(stack_t **head)
 {
-	int *num = NULL;
 	stack_t *temp = NULL;
 
 	if (head == NULL || *head == NULL)
-		return (NULL);
+		return;
 
-	num = &(*head)->n;
 	temp = *head;
-	*head = (*head)->next;
+	(*head) = (*head)->next;
+	if (*head != NULL)
+		(*head)->prev = NULL;
 	free(temp);
-	return (num);
 }
 
 /**

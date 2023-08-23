@@ -15,11 +15,11 @@ void execute(stack_t **stack, char **arrayOfLines, int lineNumber)
 		{"push", push},
 		{"pall", pall},
 		{"pint", pint},
-		/*
 		{"pop", pop},
 		{"swap", swap},
 		{"add", add},
 		{"nop", nop},
+		/*
 		{"sub", sub},
 		{"div", div},
 		{"mul", mul},
@@ -32,14 +32,28 @@ void execute(stack_t **stack, char **arrayOfLines, int lineNumber)
 		{"stack", stack},
 		 */
 		{NULL, NULL}};
-	int i = 0;
+	int i = 0, flag = 1, error = 0;
 
 	for (i = 0; opst[i].opcode != NULL; i++)
 	{
-		if (strcmp(opst[i].opcode, opcode) == 0)
+
+		if (opcode == NULL || opcode[0] == '#')
 		{
-			opst[i].f(stack, (unsigned int)lineNumber);
+			flag = 0;
+			break;
 		}
+		else if (strcmp(opst[i].opcode, opcode) == 0)
+		{
+			flag = 0;
+			opst[i].f(stack, (unsigned int)lineNumber);
+			break;
+		}
+	}
+	if (flag)
+	{
+		error = EXIT_FAILURE;
+		fprintf(stderr, "L%d: unknown instruction %s\n", lineNumber, opcode);
+		myerror(&error);
 	}
 	free(str);
 	str = NULL;
