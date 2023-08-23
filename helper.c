@@ -8,9 +8,12 @@
  */
 int checkNumber(char *str, int *num)
 {
-	size_t i;
+	size_t i = 0;
 
-	for (i = 0; i < strlen(str); i++)
+	if (strlen(str) > 0 && str[0] == '-')
+		i++;
+
+	for (; i < strlen(str); i++)
 	{
 		if (str[i] > '9' || str[i] < '0')
 			return (-1);
