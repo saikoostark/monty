@@ -15,13 +15,13 @@ int main(int argc, char const *argv[])
 
 	if (argc != 2)
 	{
-		fprintf(stderr, "USAGE: monty file");
+		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 
 	if (fileLinesToArray((char *)argv[1], &arrayOfLines) == -1)
 	{
-		fprintf(stderr, "Error: Can't open file %s", argv[1]);
+		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
 

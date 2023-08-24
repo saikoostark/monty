@@ -1,4 +1,4 @@
 push 10
 push 2
-div
+add 12
 pall
