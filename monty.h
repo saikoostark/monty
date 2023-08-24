@@ -54,6 +54,7 @@ int myerror(const int *error);
 
 /* memoryhelper.c */
 void freeargs(char ***arr);
+int checkpush(char *cmd);
 
 /* execute.c */
 void execute(stack_t **stack, char **arrayOfLines, int lineNumber);
@@ -76,7 +77,11 @@ void mul(stack_t **stack, unsigned int line_number);
 void mod(stack_t **stack, unsigned int line_number);
 void pchar(stack_t **stack, unsigned int line_number);
 void pstr(stack_t **stack, unsigned int line_number);
+
 /* methods4.c */
 void rotl(stack_t **stack, unsigned int line_number);
 void rotr(stack_t **stack, unsigned int line_number);
+void _stack(stack_t **stack, unsigned int line_number);
+void _queue(stack_t **stack, unsigned int line_number);
+
 #endif

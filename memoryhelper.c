@@ -20,3 +20,19 @@ void freeargs(char ***arr)
 	free(*arr);
 	*arr = NULL;
 }
+
+/**
+ * checkpush - function
+ * @cmd: function param
+ * Return: int
+ */
+int checkpush(char *cmd)
+{
+	static int num = 1;
+
+	if (cmd != NULL && strcmp(cmd, "stack") == 0)
+		num = 1;
+	else if (cmd != NULL && strcmp(cmd, "queue") == 0)
+		num = 0;
+	return (num);
+}

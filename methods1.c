@@ -20,11 +20,24 @@ void push(stack_t **stack, unsigned int line_number)
 		return;
 	}
 
-	if (push_front(stack, num) == NULL)
+	if (checkpush(NULL) == 1)
 	{
-		error = EXIT_FAILURE;
-		myerror(&error);
-		fprintf(stderr, "Error: malloc failed\n");
+
+		if (push_front(stack, num) == NULL)
+		{
+			error = EXIT_FAILURE;
+			myerror(&error);
+			fprintf(stderr, "Error: malloc failed\n");
+		}
+	}
+	else if (checkpush(NULL) == 0)
+	{
+		if (push_back(stack, num) == NULL)
+		{
+			error = EXIT_FAILURE;
+			myerror(&error);
+			fprintf(stderr, "Error: malloc failed\n");
+		}
 	}
 }
 

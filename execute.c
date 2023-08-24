@@ -12,12 +12,12 @@ void execute(stack_t **stack, char **arrayOfLines, int lineNumber)
 	char *str = strdup(arrayOfLines[lineNumber - 1]);
 	char *opcode = strtok(str, " ");
 	instruction_t opst[] = {
-		{"push", push}, {"pall", pall}, {"pint", pint},
-		{"pop", pop}, {"swap", swap}, {"add", add},
-		{"nop", nop}, {"sub", sub}, {"div", _div},
-		{"mul", mul}, {"mod", mod}, {"pchar", pchar},
-		{"pstr", pstr}, {"rotl", rotl}, {"rotr", rotr},
-		{NULL, NULL}};
+		{"push", push}, {"pall", pall},
+		{"pint", pint}, {"pop", pop}, {"swap", swap},
+		{"add", add}, {"nop", nop}, {"sub", sub},
+		{"div", _div}, {"mul", mul}, {"mod", mod},
+		{"pchar", pchar}, {"pstr", pstr}, {"rotl", rotl}, {"rotr", rotr},
+		{"stack", _stack}, {"queue", _queue}, {NULL, NULL}};
 
 	int i = 0, flag = 1, error = 0;
 
@@ -30,7 +30,9 @@ void execute(stack_t **stack, char **arrayOfLines, int lineNumber)
 		}
 		else if (strcmp(opst[i].opcode, opcode) == 0)
 		{
-			flag = 0, opst[i].f(stack, (unsigned int)lineNumber);
+			checkpush(opcode);
+			flag = 0,
+			opst[i].f(stack, (unsigned int)lineNumber);
 			break;
 		}
 	}

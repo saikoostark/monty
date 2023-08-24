@@ -49,3 +49,31 @@ void rotr(stack_t **stack, unsigned int line_number)
 	}
 	temp->n = a;
 }
+
+/**
+ * _stack - function
+ * @stack: function param
+ * @line_number: function param
+ * Return: int
+ */
+void _stack(stack_t **stack, unsigned int line_number)
+{
+	(void)stack;
+	(void)line_number;
+
+	checkpush("stack");
+}
+
+/**
+ * _queue - function
+ * @stack: function param
+ * @line_number: function param
+ * Return: int
+ */
+void _queue(stack_t **stack, unsigned int line_number)
+{
+	(void)stack;
+	(void)line_number;
+
+	checkpush("queue");
+}
