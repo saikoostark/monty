@@ -19,10 +19,6 @@ void execute(stack_t **stack, char **arrayOfLines, int lineNumber)
 		{"pstr", pstr}, {"rotl", rotl}, {"rotr", rotr},
 		{NULL, NULL}};
 
-	/*
-	{"queue", queue},
-	{"stack", stack},
-	*/
 	int i = 0, flag = 1, error = 0;
 
 	for (i = 0; opst[i].opcode != NULL; i++)
