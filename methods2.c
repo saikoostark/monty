@@ -18,7 +18,7 @@ void add(stack_t **stack, unsigned int line_number)
 	{
 		error = EXIT_FAILURE;
 		myerror(&error);
-		fprintf(stderr, "L%u: usage:  can't add, stack too short\n", line_number);
+		fprintf(stderr, "L%u: can't add, stack too short\n", line_number);
 		return;
 	}
 
@@ -58,7 +58,7 @@ void sub(stack_t **stack, unsigned int line_number)
 	{
 		error = EXIT_FAILURE;
 		myerror(&error);
-		fprintf(stderr, "L%u: usage:  can't sub, stack too short\n", line_number);
+		fprintf(stderr, "L%u: can't sub, stack too short\n", line_number);
 		return;
 	}
 
@@ -86,7 +86,7 @@ void _div(stack_t **stack, unsigned int line_number)
 	{
 		error = EXIT_FAILURE;
 		myerror(&error);
-		fprintf(stderr, "L%u: usage:  can't div, stack too short\n", line_number);
+		fprintf(stderr, "L%u: can't div, stack too short\n", line_number);
 		return;
 	}
 
@@ -94,7 +94,7 @@ void _div(stack_t **stack, unsigned int line_number)
 	{
 		error = EXIT_FAILURE;
 		myerror(&error);
-		fprintf(stderr, "L%u: usage:  division by zero\n", line_number);
+		fprintf(stderr, "L%u: division by zero\n", line_number);
 		return;
 	}
 
@@ -122,7 +122,7 @@ void mul(stack_t **stack, unsigned int line_number)
 	{
 		error = EXIT_FAILURE;
 		myerror(&error);
-		fprintf(stderr, "L%u: usage:  can't mul, stack too short\n", line_number);
+		fprintf(stderr, "L%u: can't mul, stack too short\n", line_number);
 		return;
 	}
 
