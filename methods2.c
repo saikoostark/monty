@@ -69,7 +69,7 @@ void sub(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * _div - function
+ * div - function
  * @stack: function param
  * @line_number: function param
  * Return: void
